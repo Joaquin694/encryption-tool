@@ -11,23 +11,21 @@ int main() {
   cout << "Enter the filename: " << endl;
   getline(cin >> ws, filename);
 
-  cout << "Encrypt (e) or Decrypt (d)?: ";
+  cout << " Caesar Encrypt (e) / Decrypt (d) or Vigenere Encrypt ev / dev?: ";
   cin >> mode;
 
-  if (mode == 'e' || mode == 'E') {
+  if (mode == 'e') {
     if (encryptFile(filename, true)) {
       cout << "Encryption completed successfully." << endl;
     } else {
       cerr << "Error: Unable to perform encryption." << endl;
     }
-  } else if (mode == 'd' || mode == 'D') {
-    if (encryptFile(filename, true)) {
+  } else if (mode == 'd') {
+    if (encryptFile(filename, false)) {
       cout << "Descryption completed successfully." << endl;
     } else {
       cerr << "Error: unable to perform descryption." << endl;
     }
-  } else {
-    cerr << "Error: Invalid mode selected" << endl;
   }
 
   return 0;

@@ -1,9 +1,13 @@
+
 #include "encryption.h"
 #include <fstream>
 #include <cctype>
 #include <iterator>
 #include <string>
 using namespace std;
+
+
+
 
 bool performCaesarCipher(string &content, bool encrypt) {
   int shift = encrypt ? 3 : -3;
